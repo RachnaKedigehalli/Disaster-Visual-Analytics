@@ -83,8 +83,9 @@ def generate_geoplot():
             lat="lon",
             lon="lat",
             color="informative",
-            zoom=3,
+            zoom=1,
             height=600,
+            title=filename
         )
         
         fig.update_layout(mapbox_style="open-street-map")
