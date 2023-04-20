@@ -3,3 +3,4 @@ mlenv/
 env/
 **/.DS_Store
 humaid/data
+__pycache__
