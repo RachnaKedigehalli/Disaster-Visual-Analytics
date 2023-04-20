@@ -1,9 +1,7 @@
 from dash import Dash, html, dcc
 import plotly.express as px
-import plotly.graph_objects as go
 import pandas as pd
 import json
-import os
 import dash_bootstrap_components as dbc
 
 data_folder = "./../data/"
@@ -92,9 +90,9 @@ geoplots = html.Div(style={'textAlign': 'center', 'width': '90%', 'margin': 'aut
         html.Div(
             [
                 dbc.Row([
-                    dbc.Col(
-                        
+                    dbc.Col([
                         html.Div(
+                            style={'width': '60%'},
                             children=[
                                 html.H3(file_names[3*i+j]),
                                 dcc.Graph(
@@ -102,11 +100,11 @@ geoplots = html.Div(style={'textAlign': 'center', 'width': '90%', 'margin': 'aut
                                     figure=generate_geoplot(file_names[3*i+j])
                                 )
                             ]
-                        ),
+                        )],
                         width=4
                     )
                     for j in range(3)
-                ]) 
+                ], align='center') 
                 for i in range(2)
             ]
         )

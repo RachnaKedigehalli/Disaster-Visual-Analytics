@@ -1,6 +1,7 @@
 from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 from geoplots import *
+from frequency import *
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -22,19 +23,7 @@ def render_content(tab):
     if tab == 'geoplots':
         return geoplots
     elif tab == 'frequency':
-        return html.Div([
-            html.H3('Tab content 2'),
-            dcc.Graph(
-                id='graph-2-tabs-dcc',
-                figure={
-                    'data': [{
-                        'x': [1, 2, 3],
-                        'y': [5, 10, 6],
-                        'type': 'bar'
-                    }]
-                }
-            )
-        ])
+        return frequency
 
 if __name__ == '__main__':
     app.run_server(debug=True)
